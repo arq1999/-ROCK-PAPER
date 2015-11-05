@@ -1,8 +1,21 @@
 var userPoint = 0;
 var aiPoint = 0;
 
+
+
 // This function returns the selection of the computer
 function getAISelection() {
+    var randomRPS = Math.random();
+    if ( randomRPS < 0.3){
+        randomRPS= "rock";
+    }
+    else if (randomRPS <= 0.6) {
+        randomRPS = "paper";
+    }
+    else {
+        randomRPS = "scissors";
+    }
+    
     //TODO: randomly choose between 'rock', 'paper', or 'scissors'
 }
 
