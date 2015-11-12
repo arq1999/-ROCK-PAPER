@@ -23,6 +23,19 @@ function getAISelection() {
 function pickWinner(userValue, aiValue) {
     //TODO: pick the correct winner: user or ai
     //TODO: Add one point for the winner
+    if(userValue == "paper"){
+        if(aiValue == "rock"){
+            setScore("userPoint", 2)
+            return "user";
+        } else if (aiValue == "scissors"){
+            setScore('aiPoint', 2)
+            return "ai";
+        } else{
+            setScore(null, 1)
+            return "draw";
+        }
+    }
+    
 }
 
 // This function sets the scoreboard with the correct points
@@ -48,5 +61,8 @@ function evaluate(evt) {
 
 // This function runs on page load
 $(document).ready(function(){
+    $('.token').on('.click', function(event)){
+        evaluate(event);
+    }
 
 });
